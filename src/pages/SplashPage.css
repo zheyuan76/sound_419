@@ -1,0 +1,168 @@
+.splash {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.splash-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* 山水装饰 — 深底金雾 */
+.splash-mountains {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  z-index: 1;
+  background:
+    linear-gradient(170deg, transparent 40%, rgba(201,169,110,0.04) 60%, rgba(201,169,110,0.08) 100%),
+    linear-gradient(190deg, transparent 50%, rgba(130,178,155,0.03) 70%, rgba(130,178,155,0.06) 100%);
+  mask-image: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
+}
+
+.splash-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  animation: fadeUp 1.2s ease-out both;
+}
+
+/* 印章 — 金色 */
+.splash-stamp {
+  display: inline-block;
+  border: 2.5px solid var(--orange);
+  color: var(--orange);
+  padding: 8px 12px;
+  font-size: 18px;
+  font-family: var(--font-title);
+  letter-spacing: 8px;
+  transform: rotate(-4deg);
+  margin-bottom: 28px;
+  opacity: 0.75;
+}
+
+.splash-title {
+  font-family: var(--font-title);
+  font-size: 72px;
+  font-weight: 900;
+  letter-spacing: 16px;
+  color: var(--ink);
+  margin-bottom: 8px;
+  text-shadow: 0 2px 16px rgba(201,169,110,0.15);
+}
+
+.splash-subtitle {
+  font-size: 16px;
+  letter-spacing: 8px;
+  color: var(--text-dim);
+  margin-bottom: 20px;
+  font-family: var(--font);
+}
+
+.splash-rule {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--orange), transparent);
+  opacity: 0.3;
+  margin: 0 auto 20px;
+}
+
+.splash-desc {
+  font-size: 15px;
+  color: var(--text-dim);
+  letter-spacing: 6px;
+  margin-bottom: 48px;
+}
+
+.splash-enter {
+  padding: 14px 52px;
+  font-size: 16px;
+  font-family: var(--font-title);
+  letter-spacing: 6px;
+  border: 1.5px solid var(--orange);
+  border-radius: 0;
+  color: var(--orange);
+  background: rgba(212, 137, 74, 0.06);
+  transition: all 0.3s;
+}
+
+.splash-enter:hover {
+  background: var(--orange);
+  color: var(--paper);
+  box-shadow: 0 4px 24px rgba(212, 137, 74, 0.3);
+}
+
+.splash-footer {
+  position: absolute;
+  bottom: 24px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 2;
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: var(--text-dim);
+  opacity: 0.5;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsive: Mobile ===== */
+@media (max-width: 480px) {
+  .splash-title {
+    font-size: 36px;
+    letter-spacing: 8px;
+  }
+  .splash-subtitle {
+    font-size: 13px;
+    letter-spacing: 4px;
+  }
+  .splash-desc {
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-bottom: 32px;
+  }
+  .splash-stamp {
+    font-size: 14px;
+    letter-spacing: 5px;
+    padding: 6px 10px;
+    margin-bottom: 20px;
+  }
+  .splash-enter {
+    padding: 12px 36px;
+    font-size: 14px;
+    letter-spacing: 4px;
+  }
+  .splash-footer {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+}
+
+/* ===== Responsive: Tablet ===== */
+@media (min-width: 481px) and (max-width: 768px) {
+  .splash-title {
+    font-size: 52px;
+    letter-spacing: 12px;
+  }
+  .splash-subtitle {
+    font-size: 14px;
+    letter-spacing: 6px;
+  }
+  .splash-desc {
+    font-size: 14px;
+    letter-spacing: 4px;
+  }
+}
